@@ -1,4 +1,5 @@
-# Network Sweep & Access Control
+# Linux-Commands-User-Management-Lab
+# Lab Title: User Management in Linux
 
 **Scenario**
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. Although the attack was contained, your manager has tasked you with creating a network sweep script that can: 
@@ -17,29 +18,38 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 * **Commands:** `ping`, `grep`, `cut`, `tr`, `chmod`, `chown`, `adduser`, `groupadd`, `usermod`, `su`
 * **Concepts:** Network Discovery, Linux File Permissions (Octal), IAM, Output Redirection
 
-## Step-by-Step Process & Commands Executed
 # Part 1: Security Group Setup
-# 1. Create the security group
-sudo groupadd security
+1. **Created the security group**
+   
+   `sudo groupadd security `
 
-# 2. Create users
-sudo adduser security alice_sec
-sudo adduser security bob_sec
-sudo adduser security carol_sec
+2. **Created users: alice_sec, bob_sec, carol_sec**
+   
+   `sudo adduser alice_sec`
+   
+   `sudo adduser bob_sec`
+   
+   `sudo adduser carol_sec`
 
-# 3. Add Users to the Security Group
-sudo usermod -aG security alice_sec
-sudo usermod -aG security bob_sec
-sudo usermod -aG security carol_sec
+3. **Added Users to the Security Group**
+   
+   `sudo usermod -aG security alice_sec`
+   
+   `sudo usermod -aG security bob_sec`
+   
+   `sudo usermod -aG security carol_sec`
 
-# 5. Set Up the Shared Directory
-sudo mkdir -p /home/shared/security
+4. **Set Up the Shared Directory**
+   
+   `sudo mkdir -p /home/shared/security`
 
-### Part 2: Network Sweep Script
-# 1. Create the Script File- testsweep.sh
-sudo mousepad /home/shared/security/testsweep.sh
+# Part 2: Network Sweep Script
+1. **Added the Script File- testsweep.sh**
+   
+  `sudo mousepad /home/shared/security/testsweep.sh`
 
-# 2. Write the Script Code
+2. **Wrote the Script Code**
+   
      #!/bin/bash
      if [ -z "$1" ]; 
      then
