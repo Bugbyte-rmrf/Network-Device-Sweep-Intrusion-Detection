@@ -1,4 +1,5 @@
 # Network Sweep & Access Control
+
 **Scenario**
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. Although the attack was contained, your manager has tasked you with creating a network sweep script that can: 
 ● Ping all devices in a given subnet. 
@@ -16,11 +17,8 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 * **Commands:** `ping`, `grep`, `cut`, `tr`, `chmod`, `chown`, `adduser`, `groupadd`, `usermod`, `su`
 * **Concepts:** Network Discovery, Linux File Permissions (Octal), IAM, Output Redirection
 
----
-
 ## Step-by-Step Process & Commands Executed
-
-### Part 1: Security Group Setup
+# Part 1: Security Group Setup
 # 1. Create the security group
 sudo groupadd security
 
