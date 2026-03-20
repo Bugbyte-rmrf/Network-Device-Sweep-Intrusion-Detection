@@ -85,9 +85,9 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
    ![Results Report](Results_of_Step_by_Step_Process_&_Commands_Executed.png)   
 
 ## Deliverables
-1.**Verification of Group and Users Created**
+1. **Verification of Group and Users Created**
 
-   `grep security /etc/group`
+    Run the command `grep security /etc/group`
 
    ![Screenshot](Results_using_cat_passwd_Marketing.png)
 
@@ -97,7 +97,8 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
     ![Screenshot](Results_using_cat_passwd_Marketing.png)
 
-4. **Execution, Testing and Results**
+3. **Execution, Testing and Results**
+   
    3.1. **Switch to a Security User e.g alice_sec:** Use the command `su - alice_sec` and enter the password
 
     ![Screenshot](Results_using_cat_passwd_Marketing.png)
