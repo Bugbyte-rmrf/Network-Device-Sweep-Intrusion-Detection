@@ -46,8 +46,11 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 2. **Wrote the Script Code**
    
    `#!/bin/bash`
+
    `if [ -z "$1" ];`
+
    `then`
+
       `echo "Error: No subnet provided."`
       `echo "Usage: ./testsweep.sh <subnet>"`
       `echo "Example: ./testsweep.sh 10.0.2"`
