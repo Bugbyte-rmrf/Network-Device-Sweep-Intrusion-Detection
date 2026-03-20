@@ -1,11 +1,7 @@
 # Linux-Commands-User-Management-Lab
 # Lab Title: User Management in Linux
 
-You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. Although the attack was contained, your manager has tasked you with creating a network sweep script that can: 
-1. Ping all devices in a given subnet.
-2. Extract and log the IP addresses of devices that respond.
-3. Restrict execution so that only members of the SECURITY group can run the script.
-4. Save the results to a file for later comparison against the company's inventory list.
+You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. 
 
 **Objective**
 1. **Identity & Access Management (IAM):** Create a dedicated security group and assign members to it.
@@ -50,7 +46,7 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 2. **Wrote the Script Code**
    
    `#!/bin/bash`
-   `if [ -z "$1" ];` 
+   `if [ -z "$1" ];`
    `then`
       `echo "Error: No subnet provided."`
       `echo "Usage: ./testsweep.sh <subnet>"`
