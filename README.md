@@ -44,9 +44,10 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
    `sudo mousepad /home/shared/security/testsweep.sh`
 
 2. **Wrote the Script Code**
-   #!/bin/bash
 
-# Check if the subnet argument is provided
+```bash
+#!/bin/bash
+
 if [ -z "$1" ]; then
     echo "Error: No subnet provided."
     echo "Usage: ./testsweep.sh <subnet>"
@@ -54,26 +55,21 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
-# Variables
 SUBNET=$1
 OUTPUT_FILE="sweep_results.txt"
 
-# Clear the output file before starting
 > "$OUTPUT_FILE"
 
 echo "Starting network sweep on $SUBNET.1 to $SUBNET.254..."
-echo "This may take a moment..."
 
-# Loop through IPs 1-254 and ping in the background
 for ip in {1..254}; do
     ping -c 1 -W 1 "$SUBNET.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> "$OUTPUT_FILE" &
 done
 
-# Wait for all background processes to finish
 wait
+echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
-echo "Sweep complete! Active devices logged in $OUTPUT_FILE."  
-
+--
 3. **Verified the Script File is in the Group**
 
    `ls /home/shared/security`
