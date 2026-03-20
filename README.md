@@ -1,7 +1,6 @@
 # Linux-Commands-User-Management-Lab
 # Lab Title: User Management in Linux
 
-**Scenario**
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. Although the attack was contained, your manager has tasked you with creating a network sweep script that can: 
 ● Ping all devices in a given subnet. 
 ● Extract and log the IP addresses of devices that respond. 
@@ -50,7 +49,7 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 
 2. **Wrote the Script Code**
    
-     #!/bin/bash
+     `#!/bin/bash`
      if [ -z "$1" ]; 
      then
           echo "Error: No subnet provided."
