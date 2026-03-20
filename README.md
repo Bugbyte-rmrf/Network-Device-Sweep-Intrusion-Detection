@@ -1,19 +1,17 @@
-# Network-Device-Sweep-Intrusion-Detection
 # Network Sweep & Access Control
-
-## Scenario
+**Scenario**
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. Although the attack was contained, your manager has tasked you with creating a network sweep script that can: 
 ● Ping all devices in a given subnet. 
 ● Extract and log the IP addresses of devices that respond. 
 ● Restrict execution so that only members of the SECURITY group can run the script. 
 ● Save the results to a file for later comparison against the company's inventory list.
 
-## Objective
+**Objective**
 1. **Identity & Access Management (IAM):** Create a dedicated security group and assign members to it.
 2. **Bash Scripting:** Develop a network discovery tool (`testsweep.sh`) to ping a specified subnet and log active IP addresses.
 3. **File Permissions:** Enforce strict access controls using `chmod` and `chown` to prevent unauthorized users from viewing, modifying, or executing the script.
 
-## Tools Used
+**Tools Used**
 * **Operating System:** Kali Linux Virtual Machine System
 * **Commands:** `ping`, `grep`, `cut`, `tr`, `chmod`, `chown`, `adduser`, `groupadd`, `usermod`, `su`
 * **Concepts:** Network Discovery, Linux File Permissions (Octal), IAM, Output Redirection
