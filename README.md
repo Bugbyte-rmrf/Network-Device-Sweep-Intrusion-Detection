@@ -83,11 +83,11 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 ## Deliverables
 1.**Verification of Group and Users Created**
 
-   `grep security /etc/group`
+      `grep security /etc/group`
 
 2. **Script File with Correct Permissions**
    
-Run the command `ls -l /home/shared/security/testsweep.sh` to confirm only security group members have execute rights. 
+   Run the command `ls -l /home/shared/security/testsweep.sh` to confirm only security group members have execute rights. 
 
 3. **Execution, Testing and Results**
    3.1. **Switch to a Security User e.g alice_sec:** Use the command `su - alice_sec` and enter the password
