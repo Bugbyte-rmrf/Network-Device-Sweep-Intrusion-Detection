@@ -44,8 +44,35 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
    `sudo mousepad /home/shared/security/testsweep.sh`
 
 2. **Wrote the Script Code**
-   
-  
+   #!/bin/bash
+
+# Check if the subnet argument is provided
+if [ -z "$1" ]; then
+    echo "Error: No subnet provided."
+    echo "Usage: ./testsweep.sh <subnet>"
+    echo "Example: ./testsweep.sh 10.0.2"
+    exit 1
+fi
+
+# Variables
+SUBNET=$1
+OUTPUT_FILE="sweep_results.txt"
+
+# Clear the output file before starting
+> "$OUTPUT_FILE"
+
+echo "Starting network sweep on $SUBNET.1 to $SUBNET.254..."
+echo "This may take a moment..."
+
+# Loop through IPs 1-254 and ping in the background
+for ip in {1..254}; do
+    ping -c 1 -W 1 "$SUBNET.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> "$OUTPUT_FILE" &
+done
+
+# Wait for all background processes to finish
+wait
+
+echo "Sweep complete! Active devices logged in $OUTPUT_FILE."  
 
 3. **Verified the Script File is in the Group**
 
@@ -69,22 +96,8 @@ Ensure only security group members have execute rights.
    `ls -l /home/shared/security/testsweep.sh`
 
 3. **Execution, Testing and Results**
-   
-Restrict execution so that only members of the security group can run the script.
-# 3.1 Switch to a Security User - alice_sec
-su - alice_sec
+3.1. **Switch to a Security User e.g alice_sec:** Use the command 'su - alice_sec' and enter the password
+3.2. **Run the Script:** Restrict execution so that alice_sec can run the script. Run the commands `cd /home/shared/security` and `./testsweep.sh 10.0.2`
+3.3. **Show the Content of Script:** For testsweep.sh, run the command 'cat testsweep.sh'
+3.4. **Show the Content of Textfile:** Run 'cat sweep_results.txt'.You should see either list of IP addresses or a clean, blank return if the network is empty. This depends on whether there were any active devices on the 10.0.2.
 
-# 3.2. Run the Script
-cd /home/shared/security
-./testsweep.sh 10.0.2
-
-# 3.3. Show the Content of Script: testsweep.sh
-cat testsweep.sh
-
-# 3. Show the Content of Text File: sweep_results.txt (if empty)
-cat sweep_results.txt
-
-# 3. Write and show the Content of Text File: sweep_results.txt
-echo "10.0.2.150" > sweep_results.txt
-echo "10.0.2.150" >> sweep_results.txt
-echo "10.0.2.160" >> sweep_results.txt
