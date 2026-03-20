@@ -2,10 +2,10 @@
 # Lab Title: User Management in Linux
 
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. Although the attack was contained, your manager has tasked you with creating a network sweep script that can: 
-● Ping all devices in a given subnet. 
-● Extract and log the IP addresses of devices that respond. 
-● Restrict execution so that only members of the SECURITY group can run the script. 
-● Save the results to a file for later comparison against the company's inventory list.
+1. Ping all devices in a given subnet.
+2. Extract and log the IP addresses of devices that respond.
+3. Restrict execution so that only members of the SECURITY group can run the script.
+4. Save the results to a file for later comparison against the company's inventory list.
 
 **Objective**
 1. **Identity & Access Management (IAM):** Create a dedicated security group and assign members to it.
@@ -45,18 +45,18 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 # Part 2: Network Sweep Script
 1. **Added the Script File- testsweep.sh**
    
-  `sudo mousepad /home/shared/security/testsweep.sh`
+   `sudo mousepad /home/shared/security/testsweep.sh`
 
 2. **Wrote the Script Code**
    
      `#!/bin/bash`
-     if [ -z "$1" ]; 
-     then
-          echo "Error: No subnet provided."
-          echo "Usage: ./testsweep.sh <subnet>"
-          echo "Example: ./testsweep.sh 10.0.2"
-          exit 1
-    fi
+     `if [ -z "$1" ];` 
+     `then`
+         `echo "Error: No subnet provided."`
+         `echo "Usage: ./testsweep.sh <subnet>"`
+         `echo "Example: ./testsweep.sh 10.0.2"`
+         `exit 1`
+    `fi`
     SUBNET=$1
     OUTPUT_FILE="sweep_results.txt"
     > $OUTPUT_FILE
