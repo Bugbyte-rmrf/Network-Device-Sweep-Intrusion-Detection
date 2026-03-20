@@ -51,13 +51,13 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 
    `then`
       
-      `echo "Error: No subnet provided."`
+         `echo "Error: No subnet provided."`
    
-      `echo "Usage: ./testsweep.sh <subnet>"`
+         `echo "Usage: ./testsweep.sh <subnet>"`
    
-      `echo "Example: ./testsweep.sh 10.0.2"`
+         `echo "Example: ./testsweep.sh 10.0.2"`
    
-      `exit 1`
+         `exit 1`
    
    `fi`
    
@@ -73,7 +73,7 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 
    `for ip in {1..254}; do`
    
-      `ping -c 1 -W 1 $SUBNET.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> $OUTPUT_FILE &`
+         `ping -c 1 -W 1 $SUBNET.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> $OUTPUT_FILE &`
    
    `done`
 
