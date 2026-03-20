@@ -89,31 +89,25 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
     Run the command `grep security /etc/group`
 
-   ![Screenshot](Results_using_cat_passwd_Marketing.png)
+   ![Screenshot](Results_using_grep_security.png)
 
 2. **Script File with Correct Permissions**
    
    Run the command `ls -l /home/shared/security/testsweep.sh` to confirm only security group members have execute rights.
 
-    ![Screenshot](Results_using_cat_passwd_Marketing.png)
+    ![Screenshot](Results_using_ls_l_permission.png)
 
 3. **Execution, Testing and Results**
    
    3.1. **Switch to a security member e.g alice_sec:** Use the command `su - alice_sec` and enter the password
 
-    ![Screenshot](Results_using_cat_passwd_Marketing.png)
-
    3.2. **Run the Script:** Restrict execution so that alice_sec can run the script. Run the commands `cd /home/shared/security` and `./testsweep.sh 10.0.2`
-
-    ![Screenshot](Results_using_cat_passwd_Marketing.png)
 
    3.3. **Show the Content of Script:** For testsweep.sh, run the command `cat testsweep.sh`
 
-    ![Screenshot](Results_using_cat_passwd_Marketing.png)
-
    3.4. **Show the Content of Textfile:** Run `cat sweep_results.txt`.You should see either list of IP addresses or a clean, blank return if the network is empty. This depends on whether there were any active devices on the 10.0.2.
 
-     ![Screenshot](Results_using_cat_passwd_Marketing.png)
+     ![Results Report](Results_of_deliverable_3) 
 
 
 
