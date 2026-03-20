@@ -21,17 +21,13 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 2. **Created users: alice_sec, bob_sec, carol_sec**
    
    `sudo adduser alice_sec`
-   
    `sudo adduser bob_sec`
-   
    `sudo adduser carol_sec`
 
 3. **Added Users to the Security Group**
    
    `sudo usermod -aG security alice_sec`
-   
    `sudo usermod -aG security bob_sec`
-   
    `sudo usermod -aG security carol_sec`
 
 4. **Set Up the Shared Directory**
@@ -45,52 +41,25 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 
 2. **Wrote the Script Code**
    
-   #!/bin/bash
+  
 
-# Check if the subnet argument is provided
-if [ -z "$1" ]; then
-    echo "Error: No subnet provided."
-    echo "Usage: ./testsweep.sh <subnet>"
-    echo "Example: ./testsweep.sh 10.0.2"
-    exit 1
-fi
+3. **Verified the Script File is in the Group**
 
-# Variables
-SUBNET=$1
-OUTPUT_FILE="sweep_results.txt"
+   `ls /home/shared/security`
 
-# Clear the output file before starting
-> "$OUTPUT_FILE"
-
-echo "Starting network sweep on $SUBNET.1 to $SUBNET.254..."
-echo "This may take a moment..."
-
-# Loop through IPs 1-254 and ping in the background
-for ip in {1..254}; do
-    ping -c 1 -W 1 "$SUBNET.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> "$OUTPUT_FILE" &
-done
-
-# Wait for all background processes to finish
-wait
-
-echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
-
-# 3. Verify the Script File in Group
-ls /home/shared/security
-
-# 4. Set the Ownership and Permissions: 
-Ensure only members of the security group can execute the sweep script.
-
-sudo chown root:security /home/shared/security/testsweep.sh
-sudo chmod 770 /home/shared/security/testsweep.sh
+4. **Ownership and Permissions - Group members only** 
+   `sudo chown root:security /home/shared/security/testsweep.sh`
+   `sudo chmod 770 /home/shared/security/testsweep.sh`
 
 ## Deliverables
-# 1.Verification of Group and Users Created - Delverable 1
-grep security /etc/group
+1.**Verification of Group and Users Created**
 
-# 2. Script File with Correct Permissions
+   `grep security /etc/group`
+
+2. **Script File with Correct Permissions**
 Ensure only SECURITY group members have execute rights. 
-ls -l /home/shared/security/testsweep.sh
+
+   `ls -l /home/shared/security/testsweep.sh`
 
 # 3: Execution, Testing and Results
 Restrict execution so that only members of the SECURITY group can run the script.
