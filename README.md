@@ -44,44 +44,7 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
    `sudo mousepad /home/shared/security/testsweep.sh`
 
 2. **Wrote the Script Code**
-## Network Sweep Script
-
-This script performs a fast ICMP ping sweep on a specified subnet and logs active IP addresses.
-
-### The Script
-```bash
-#!/bin/bash
-
-if [ -z "$1" ]; then
-    echo "Error: No subnet provided."
-    echo "Usage: ./testsweep.sh <subnet>"
-    echo "Example: ./testsweep.sh 10.0.2"
-    exit 1
-fi
-
-SUBNET=$1
-OUTPUT_FILE="sweep_results.txt"
-
-> "$OUTPUT_FILE"
-
-echo "Starting network sweep on $SUBNET.1 to $SUBNET.254..."
-
-for ip in {1..254}; do
-    ping -c 1 -W 1 "$SUBNET.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> "$OUTPUT_FILE" &
-done
-
-wait
-echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
-
-
-
-
-
-
-
-
-
-
+   
    #!/bin/bash
 
 # Check if the subnet argument is provided
