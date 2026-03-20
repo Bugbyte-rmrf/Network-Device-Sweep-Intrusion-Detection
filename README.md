@@ -80,12 +80,16 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
    
    `sudo chmod 770 /home/shared/security/testsweep.sh`
 
+## Results of Part 1 & Part 2
+   
+   ![Results Report](Results_of_Step_by_Step_Process_&_Commands_Executed.png)   
+
 ## Deliverables
 1.**Verification of Group and Users Created**
 
    `grep security /etc/group`
 
-    ![Screenshot](Results_using_cat_passwd_Marketing.png)
+   ![Screenshot](Results_using_cat_passwd_Marketing.png)
 
 2. **Script File with Correct Permissions**
    
