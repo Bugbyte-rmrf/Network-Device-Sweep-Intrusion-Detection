@@ -87,16 +87,14 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
 2. **Script File with Correct Permissions**
    
-Ensure only security group members have execute rights. 
-
-   `ls -l /home/shared/security/testsweep.sh`
+Run the command `ls -l /home/shared/security/testsweep.sh` to confirm only security group members have execute rights. 
 
 3. **Execution, Testing and Results**
-   3.1. **Switch to a Security User e.g alice_sec:** Use the command 'su - alice_sec' and enter the password
+   3.1. **Switch to a Security User e.g alice_sec:** Use the command `su - alice_sec` and enter the password
 
    3.2. **Run the Script:** Restrict execution so that alice_sec can run the script. Run the commands `cd /home/shared/security` and `./testsweep.sh 10.0.2`
 
-   3.3. **Show the Content of Script:** For testsweep.sh, run the command 'cat testsweep.sh'
+   3.3. **Show the Content of Script:** For testsweep.sh, run the command `cat testsweep.sh`
 
-   3.4. **Show the Content of Textfile:** Run 'cat sweep_results.txt'.You should see either list of IP addresses or a clean, blank return if the network is empty. This depends on whether there were any active devices on the 10.0.2.
+   3.4. **Show the Content of Textfile:** Run `cat sweep_results.txt`.You should see either list of IP addresses or a clean, blank return if the network is empty. This depends on whether there were any active devices on the 10.0.2.
 
