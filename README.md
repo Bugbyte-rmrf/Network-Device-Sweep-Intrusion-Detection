@@ -21,16 +21,20 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 2. **Created users: alice_sec, bob_sec, carol_sec**
    
    `sudo adduser alice_sec`
+
    `sudo adduser bob_sec`
+
    `sudo adduser carol_sec`
 
-3. **Added Users to the Security Group**
+4. **Added Users to the Security Group**
    
    `sudo usermod -aG security alice_sec`
+
    `sudo usermod -aG security bob_sec`
+
    `sudo usermod -aG security carol_sec`
 
-4. **Set Up the Shared Directory**
+6. **Set Up the Shared Directory**
    
    `sudo mkdir -p /home/shared/security`
 
@@ -47,8 +51,10 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 
    `ls /home/shared/security`
 
-4. **Ownership and Permissions - Group members only** 
+4. **Ownership and Permissions - Group members only**
+   
    `sudo chown root:security /home/shared/security/testsweep.sh`
+   
    `sudo chmod 770 /home/shared/security/testsweep.sh`
 
 ## Deliverables
@@ -57,12 +63,14 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
    `grep security /etc/group`
 
 2. **Script File with Correct Permissions**
-Ensure only SECURITY group members have execute rights. 
+   
+Ensure only security group members have execute rights. 
 
    `ls -l /home/shared/security/testsweep.sh`
 
-# 3: Execution, Testing and Results
-Restrict execution so that only members of the SECURITY group can run the script.
+3. **Execution, Testing and Results**
+   
+Restrict execution so that only members of the security group can run the script.
 # 3.1 Switch to a Security User - alice_sec
 su - alice_sec
 
