@@ -50,22 +50,36 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
    `if [ -z "$1" ];`
 
    `then`
-
+      
       `echo "Error: No subnet provided."`
+   
       `echo "Usage: ./testsweep.sh <subnet>"`
+   
       `echo "Example: ./testsweep.sh 10.0.2"`
+   
       `exit 1`
+   
    `fi`
+   
    `SUBNET=$1`
+   
    `OUTPUT_FILE="sweep_results.txt"`
+   
    `> $OUTPUT_FILE`
+   
    `echo "Starting network sweep on $SUBNET.1 to $SUBNET.254..."`
-    echo "This may take a moment..."`
-    for ip in {1..254}; do
-          ping -c 1 -W 1 $SUBNET.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> $OUTPUT_FILE &
-    done
-    wait
-    echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
+
+   `echo "This may take a moment..."`
+
+   `for ip in {1..254}; do`
+   
+      `ping -c 1 -W 1 $SUBNET.$ip | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> $OUTPUT_FILE &`
+   
+   `done`
+
+   `wait`
+
+   `echo "Sweep complete! Active devices logged in $OUTPUT_FILE."`
 
 # 3. Verify the Script File in Group
 ls /home/shared/security
