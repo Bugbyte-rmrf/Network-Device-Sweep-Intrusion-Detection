@@ -99,7 +99,7 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
 3. **Execution, Testing and Results**
    
-   3.1. **Switch to a Security User e.g alice_sec:** Use the command `su - alice_sec` and enter the password
+   3.1. **Switch to a security member e.g alice_sec:** Use the command `su - alice_sec` and enter the password
 
     ![Screenshot](Results_using_cat_passwd_Marketing.png)
 
