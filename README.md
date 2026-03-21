@@ -144,8 +144,12 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
      ![Screenshot](Results_using_cat_testsweep.png)
 
-    
+# Key Observations / Lessons Learned
+1. The Rule of Least Privilege- Using 770 permission, it ensures that only authorized security team members can view, edit, and run the network scanner. Because everyone else is completely blocked, if a regular employee's account gets hacked, the attacker is locked out of the system.
 
+2. Bash Automation- By writing a simple script, checking of 254 network addresses is automated. This frees up the security team to fix the problem during emergency.
+
+3. Network visibility- The script also makes a list of every active device automatically. Compares the list to the company's official inventory to spot a hacker's laptop or an unapproved access.
 
 
 
