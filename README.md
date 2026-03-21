@@ -1,4 +1,4 @@
-# Network-Device-Sweep-&-Intrusion-Detection-Lab
+# Lab Title: Network-Device-Sweep-&-Intrusion-Detection
 
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. 
 
