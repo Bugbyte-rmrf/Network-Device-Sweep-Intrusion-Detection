@@ -2,9 +2,13 @@
 
 **Scenario**
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network.Although the attack was contained, you are tasked with creating a network sweep script that can:
+
 ● Ping all devices in a given subnet. 
+
 ● Extract and log the IP addresses of devices that respond. 
+
 ● Restrict execution so that only members of the security group can run the script. 
+
 ● Save the results to a file for later comparison against the company's inventory list.
 
 **Objective**
@@ -44,13 +48,14 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 
 # Part 2: Network Sweep Script
 1. **Verified the IP address: Under eth0: inet 10.0.2.**
+   
    `ip a`
 
-1. **Added the Script File- testsweep.sh**
+2. **Added the Script File- testsweep.sh**
    
    `mousepad /home/shared/security/testsweep.sh`
 
-2. **Wrote the Script Code**
+3. **Wrote the Script Code**
 
 ```bash
 #!/bin/bash
@@ -87,27 +92,25 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
 ```
 
-3. **Verified the Script File is in the Group**
+4. **Verified the Script File is in the Group**
 
    `ls /home/shared/security`
 
-4. **Ownership and Permissions - Group members only**
+5. **Ownership and Permissions - Group members only**
    
    `sudo chown kali:security /home/shared/security/testsweep.sh`
    
    `sudo chmod 770 /home/shared/security/testsweep.sh`
 
-5. **Created a sweep file in /home/shared/security/: sweep_results.txt**
+6. **Created a sweep file in /home/shared/security/: sweep_results.txt**
    
     `sudo touch /home/shared/security/sweep_results.txt`
 
-4. **Ownership and Permissions - sweep_results.txt**
+7. **Ownership and Permissions - sweep_results.txt**
    
    `sudo chown kali:security /home/shared/security/sweep_results.txt`
    
    `sudo chmod 770 /home/shared/security/sweep_results.txt`
-
-
 
 ## Results of Part 1 & Part 2
    
