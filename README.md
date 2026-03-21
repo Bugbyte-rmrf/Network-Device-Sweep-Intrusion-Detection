@@ -1,6 +1,11 @@
 # Lab Title: Network-Device-Sweep-&-Intrusion-Detection
 
-You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. 
+**Scenario**
+You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network.Although the attack was contained, you are tasked with creating a network sweep script that can:
+● Ping all devices in a given subnet. 
+● Extract and log the IP addresses of devices that respond. 
+● Restrict execution so that only members of the security group can run the script. 
+● Save the results to a file for later comparison against the company's inventory list.
 
 **Objective**
 1. **Identity & Access Management (IAM):** Create a dedicated security group and assign members to it.
@@ -38,15 +43,19 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
    `sudo mkdir -p /home/shared/security`
 
 # Part 2: Network Sweep Script
+1. **Verified the IP address: Under eth0: inet 10.0.2.**
+   `ip a`
+
 1. **Added the Script File- testsweep.sh**
    
-   `sudo mousepad /home/shared/security/testsweep.sh`
+   `mousepad /home/shared/security/testsweep.sh`
 
 2. **Wrote the Script Code**
 
 ```bash
 #!/bin/bash
 
+# 1. Check if a subnet argument was provided
 if [ -z "$1" ]; then
     echo "Error: No subnet provided."
     echo "Usage: ./testsweep.sh <subnet>"
@@ -54,19 +63,28 @@ if [ -z "$1" ]; then
     exit 1
 fi
 
+# 2. Assign variables
 SUBNET=$1
 OUTPUT_FILE="sweep_results.txt"
 
-> "$OUTPUT_FILE"
+# 3. Clear output file if it exists, or create a new one
+> $OUTPUT_FILE
 
+# 4. Print the starting messages
 echo "Starting network sweep on $SUBNET.1 to $SUBNET.254..."
+echo "This may take a moment..."
 
+# 5. Ping loop (runs in parallel for speed)
 for ip in {1..254}; do
-    ping -c 1 -W 1 "$SUBNET.$ip" | grep "64 bytes" | cut -d " " -f 4 | tr -d ":" >> "$OUTPUT_FILE" &
+    ping -c 1 -W 1 $SUBNET.$ip | grep "bytes from" | cut -d " " -f 4 | tr -d ":" >> $OUTPUT_FILE &
 done
 
+# 6. Wait for all pings to finish
 wait
+
+# 7. Print completion message
 echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
+
 ```
 
 3. **Verified the Script File is in the Group**
@@ -75,9 +93,21 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
 4. **Ownership and Permissions - Group members only**
    
-   `sudo chown root:security /home/shared/security/testsweep.sh`
+   `sudo chown kali:security /home/shared/security/testsweep.sh`
    
-   `sudo chmod 750 /home/shared/security/testsweep.sh`
+   `sudo chmod 770 /home/shared/security/testsweep.sh`
+
+5. **Created a sweep file in /home/shared/security/: sweep_results.txt**
+   
+    `sudo touch /home/shared/security/sweep_results.txt`
+
+4. **Ownership and Permissions - sweep_results.txt**
+   
+   `sudo chown kali:security /home/shared/security/sweep_results.txt`
+   
+   `sudo chmod 770 /home/shared/security/sweep_results.txt`
+
+
 
 ## Results of Part 1 & Part 2
    
