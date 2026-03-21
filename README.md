@@ -114,7 +114,7 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
 ## Results of Part 1 & Part 2
    
-   ![Results Report](Results_of_Step_by_Step_Process_&_Commands_Executed.png)   
+   ![Results Report](Results_part_1_&_2.png)   
 
 ## Deliverables
 1. **Verification of Group and Users Created**
@@ -141,7 +141,7 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
     3.4. **Show the Content of Script:** For testsweep.sh, run the command `cat testsweep.sh`
 
-   ![Results Report](Results_using_cat_testsweep.png)
+     ![Screenshot](Results_using_cat_testsweep.png)
 
     
 
