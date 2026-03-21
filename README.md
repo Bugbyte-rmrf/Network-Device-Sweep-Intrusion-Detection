@@ -8,9 +8,9 @@ You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that 
 
   - Extract and log the IP addresses of devices that respond. 
 
-   *** Restrict execution so that only members of the security group can run the script. 
+  - Restrict execution so that only members of the security group can run the script. 
 
-   *** Save the results to a file for later comparison against the company's inventory list.
+  - Save the results to a file for later comparison against the company's inventory list.
 
 **Objective**
 1. **Identity & Access Management (IAM):** Create a dedicated security group and assign members to it.
