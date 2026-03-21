@@ -78,7 +78,7 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
    
    `sudo chown root:security /home/shared/security/testsweep.sh`
    
-   `sudo chmod 770 /home/shared/security/testsweep.sh`
+   `sudo chmod 750 /home/shared/security/testsweep.sh`
 
 ## Results of Part 1 & Part 2
    
