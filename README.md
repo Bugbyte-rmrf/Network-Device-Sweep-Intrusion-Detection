@@ -135,11 +135,16 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
 
    3.2. **Run the Script:** Restrict execution so that alice_sec can run the script. Run the commands `cd /home/shared/security` and `./testsweep.sh 10.0.2`
 
-   3.3. **Show the Content of Script:** For testsweep.sh, run the command `cat testsweep.sh`
+   3.3. **Show the Content of Textfile:** Run `cat sweep_results.txt`.You should see either list of IP addresses or a clean, blank return if the network is empty. This depends on whether there were any active devices on the 10.0.2.
 
-   3.4. **Show the Content of Textfile:** Run `cat sweep_results.txt`.You should see either list of IP addresses or a clean, blank return if the network is empty. This depends on whether there were any active devices on the 10.0.2.
+     ![Results Report](Results_for_3_1_to_3_3.png)
 
-     ![Results Report](Results_of_deliverable_3) 
+    3.4. **Show the Content of Script:** For testsweep.sh, run the command `cat testsweep.sh`
+
+   ![Results Report](Results_using_cat_testsweep.png)
+
+    
+
 
 
 
