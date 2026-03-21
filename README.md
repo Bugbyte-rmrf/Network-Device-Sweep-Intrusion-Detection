@@ -113,11 +113,11 @@ echo "Sweep complete! Active devices logged in $OUTPUT_FILE."
    
    `sudo chmod 770 /home/shared/security/sweep_results.txt`
 
-## Results of Part 1 & Part 2
+# Results of Part 1 & Part 2
    
    ![Results Report](Results_part_1_&_2.png)   
 
-## Deliverables
+# Deliverables
 1. **Verification of Group and Users Created**
 
     Run the command `grep security /etc/group`
