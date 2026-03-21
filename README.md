@@ -1,5 +1,4 @@
-# Linux-Commands-User-Management-Lab
-# Lab Title: User Management in Linux
+# Network-Device-Sweep-&-Intrusion-Detection-Lab
 
 You are a cybersecurity analyst for SecureNet Corp, a mid-sized enterprise that recently faced a network intrusion. The attacker exploited Bring Your Own Device (BYOD) policies to connect an unauthorized device to the corporate network. 
 
